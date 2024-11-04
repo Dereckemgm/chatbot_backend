@@ -1,5 +1,26 @@
 const Chat = require('../models/entity/chat'); // Asegúrate de que la ruta sea correcta
 
+// Función para obtener todos los mensajes
+const obtenerMensajes = async (req, res) => {
+  try {
+    // Obtener todos los mensajes en la base de datos
+    const mensajes = await Chat.findAll(); // Usa `findAll` si estás usando Sequelize; para Mongoose, sería `Chat.find()`
+
+    // Respuesta exitosa con los mensajes
+    return res.status(200).json({
+      success: true,
+      message: 'Mensajes obtenidos exitosamente.',
+      data: mensajes,
+    });
+  } catch (error) {
+    console.error('Error al obtener los mensajes:', error);
+    return res.status(500).json({
+      success: false,
+      message: 'Error al obtener los mensajes.',
+    });
+  }
+};
+
 // Función para crear un nuevo mensaje
 const crearMensaje = async (req, res) => {
   const { mensaje_usuario, respuesta_chatbot } = req.body; // Desestructuración del cuerpo de la solicitud
@@ -33,4 +54,4 @@ const crearMensaje = async (req, res) => {
   }
 };
 
-module.exports = { crearMensaje };
+module.exports = { obtenerMensajes, crearMensaje };
