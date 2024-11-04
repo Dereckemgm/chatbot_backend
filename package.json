@@ -1,0 +1,33 @@
+{
+  "name": "bd_chatbot",
+  "version": "1.0.0",
+  "description": "Base de datos para proyecto chatbot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dereckemgm/chatbot_backend.git"
+  },
+  "keywords": [
+    "bd",
+    "node",
+    "nodejs",
+    "chatbot"
+  ],
+  "author": "Dereck Montes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dereckemgm/chatbot_backend/issues"
+  },
+  "homepage": "https://github.com/Dereckemgm/chatbot_backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mysql2": "^3.11.3",
+    "picocolors": "1.1.1",
+    "sequelize": "^6.37.5"
+  }
+}
